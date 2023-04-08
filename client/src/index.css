@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    *, *::before, *::after {
+        transition: color 250ms, background-color 250ms;
+    }
+    
+    .spaceX {
+        @apply px-4 md:px-10 lg:px-16
+    }
+
+    .spaceY {
+        @apply py-6 md:py-8
+    }
+
+}
