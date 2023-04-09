@@ -9,7 +9,7 @@ const SearchBar = () => {
         <>
             <div className='w-full flex items-center overflow-hidden border border-secondary dark:border-dark-secondary bg-primary dark:bg-dark-primary rounded-sm'>
                 <input type="search" onChange={Data?.handleSearchChange} placeholder='Search' className='w-full md:w-56 h-[2.4rem] px-4 text-xs text-dominant dark:text-dark-dominant placeholder:text-compliment dark:placeholder:text-dark-compliment font-medium border-0 outline-none bg-transparent' />
-                <button type='button' className='w-fit h-[2.4rem] px-4 flex items-center bg-accent-dark'>
+                <button type='button' className='w-fit h-10 md:h-[2.4rem] px-4 flex items-center bg-accent-dark'>
                     <BiSearch className='text-white text-lg' />
                 </button>
             </div>
