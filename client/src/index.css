@@ -13,6 +13,11 @@
     ::-webkit-search-cancel-button {
         display: none;
     }
+
+    input[type=search] {
+        -webkit-appearance: none;
+        -webkit-appearance: textfield;
+    }
     
     .spaceX {
         @apply px-4 md:px-10 lg:px-16
