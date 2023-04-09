@@ -17,6 +17,14 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
 
     const [sorting, setSorting] = useState<string>(SORTING_OPTIONS[0]);
 
+    // search state
+
+    const [search, setSearch] = useState('');
+
+    const [searchOptions, setSearchOptions] = useState<{id: string, name: string}[] | []>([]);
+
+    const [searchResults, setSearchResults] = useState<{id: string, name: string}[] | []>([]);
+
     // pagination state
 
     const [currentPage, setCurrentPage] = useState(1);
@@ -38,6 +46,12 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
         try {
             const response = await axios.get(API_END_POINT.href);
             const JSON = response.data;
+            setSearchOptions(JSON.data.map((coin: { id: string, name: string }) => {
+                return {
+                    id: coin.id,
+                    name: coin.name.toLowerCase(),
+                };
+            }));
             setData(JSON.data);
             setLoading(true);
         } catch (error) {
@@ -49,6 +63,25 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
     useEffect(() => {
         fetchData();
     }, [currentPage, sorting]);
+
+    // sorting logic
+
+    const handleSorting = (event: React.MouseEvent<HTMLLIElement>) => {
+        const value = event.currentTarget.textContent;
+        if(value) {
+            setSorting(value);
+        };
+    };
+
+    // search logic
+
+    const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.currentTarget.value.toLowerCase();
+        setSearch(value);
+        setSearchResults(searchOptions.filter(coin => {
+            return coin.name.includes(value);
+        }));
+    };
 
     // pagination logic
 
@@ -72,6 +105,12 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
     
     return (
         <DataContext.Provider value={{
+            sorting,
+            handleSorting,
+            search,
+            setSearch,
+            searchResults,
+            handleSearchChange,
             currentPage,
             pageNums,
             nextPage,
