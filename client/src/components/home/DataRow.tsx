@@ -12,8 +12,8 @@ const DataRow = ({ id, name, cmc_rank, price, percent_change_1h, percent_change_
     return (
         <div className="w-full h-fit px-2 md:px-4 hover:bg-primary dark:hover:bg-dark-primary border-b border-secondary dark:border-dark-secondary">
             <Link to={`/coins/${id}`}>
-                <div className="w-full min-h-[8vh] grid grid-cols-5 md:grid-cols-9 lg:grid-cols-14 items-center">
-                    <span className="data__row">
+                <div className="w-full min-h-[8vh] grid grid-cols-6 md:grid-cols-10 lg:grid-cols-14 items-center">
+                    <span className="data__row hidden md:block">
                         { cmc_rank }
                     </span>
                     <span className="data__row col-span-2 flex items-center gap-x-2">
@@ -25,19 +25,19 @@ const DataRow = ({ id, name, cmc_rank, price, percent_change_1h, percent_change_
                     <span className="data__row col-span-2">
                         { price ? formatter.format(price) : '-' }
                     </span>
-                    <span className={`text-xs ${textColor(percent_change_1h)} font-medium hidden lg:block`}>
+                    <span className={`text-xs ${textColor(percent_change_1h)} font-medium`}>
                         { percent_change_1h ? percent_change_1h.toFixed(2) + '%' : '-' }
                     </span>
-                    <span className={`text-xs ${textColor(percent_change_24h)} font-medium hidden lg:block`}>
+                    <span className={`text-xs ${textColor(percent_change_24h)} font-medium`}>
                         { percent_change_24h ? percent_change_24h.toFixed(2) + '%' : '-' }
                     </span>
-                    <span className={`text-xs ${textColor(percent_change_7d)} font-medium hidden lg:block`}>
+                    <span className={`text-xs ${textColor(percent_change_7d)} font-medium hidden md:block`}>
                         { percent_change_7d ? percent_change_7d.toFixed(2) + '%' : '-' }
                     </span>
-                    <span className="data__row hidden md:block col-span-2">
+                    <span className="data__row hidden lg:block col-span-2">
                         {market_cap ? formatter.format(market_cap) : '-'}
                     </span>
-                    <span className="data__row hidden md:block col-span-2">
+                    <span className="data__row hidden lg:block col-span-2">
                         {volume_24h ? formatter.format(volume_24h) : '-'}
                     </span>
                     <span className="data__row hidden md:block col-span-2">
