@@ -28,6 +28,8 @@ export interface DataContextValue {
     data: Data[] | [];
     loading: boolean;
     sorting: string;
+    toggleSorting: boolean;
+    setToggleSorting: React.Dispatch<React.SetStateAction<boolean>>;
     handleSorting: (event: React.MouseEvent<HTMLButtonElement>) => void;
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;

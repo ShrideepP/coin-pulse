@@ -1,8 +1,11 @@
 import { useState, useContext } from 'react';
+import { DataContext } from '../../context/DataContext';
 import { AiFillCaretDown } from 'react-icons/ai';
 import { SelectBoxProps } from './Type';
 
 const SelectBox = ({ selected, handleSelect, options }: SelectBoxProps) => {
+
+    const Data = useContext(DataContext);
 
     const [toggle, setToggle] = useState(false);
 
@@ -35,7 +38,7 @@ const SelectBox = ({ selected, handleSelect, options }: SelectBoxProps) => {
                         <button 
                             key={option} 
                             onClick={event => {if(handleSelect) handleSelect(event), close()}} 
-                            className='px-4 py-2 text-start hover:text-dominant dark:hover:text-dark-dominant hover:bg-background dark:hover:bg-dark-background cursor-pointer'
+                            className={`px-4 py-2 text-start ${Data?.sorting === option ? 'text-accent' : 'text-compliment dark:text-dark-compliment'} hover:text-dominant dark:hover:text-dark-dominant hover:bg-background dark:hover:bg-dark-background cursor-pointer`}
                         >
                             { option }
                         </button>

@@ -21,6 +21,8 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
 
     const [search, setSearch] = useState('');
 
+    const [toggleSorting, setToggleSorting] = useState(false);
+
     const [searchOptions, setSearchOptions] = useState<{id: string, name: string}[] | []>([]);
 
     const [searchResults, setSearchResults] = useState<{id: string, name: string}[] | []>([]);
@@ -108,6 +110,8 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
             data,
             loading,
             sorting,
+            toggleSorting,
+            setToggleSorting,
             handleSorting,
             search,
             setSearch,

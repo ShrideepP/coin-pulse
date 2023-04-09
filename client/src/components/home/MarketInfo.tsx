@@ -1,9 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import MarketInfoCard from './MarketInfoCard';
 import axios from 'axios';
+import { DataContext } from '../../context/DataContext';
+import { Divide as Hamburger } from 'hamburger-react';
 import { BACKEND_URL, formatter } from '../../constants';
 
 const MarketInfo = () => {
+
+    const Data = useContext(DataContext);
 
     const [toggle, setToggle] = useState(true);
 
@@ -52,6 +56,17 @@ const MarketInfo = () => {
                         <span className={`w-[.8rem] h-[.8rem] absolute top-2/4 ${!toggle?'left-[5%] bg-compliment dark:bg-dark-compliment':'left-[60%] bg-white'} -translate-y-2/4 rounded-full`}></span>
                     </button>
                     <span className='text-sm text-compliment dark:text-dark-compliment font-medium'>Show Stats</span>
+                </div>
+                <div className='flex md:hidden items-center gap-x-2'>
+                    <span className='text-sm text-compliment dark:text-dark-compliment font-medium tracking-wide uppercase'>Sort</span>
+                    <button>
+                        <Hamburger 
+                            size={22} 
+                            toggled={Data?.toggleSorting} 
+                            toggle={Data?.setToggleSorting} 
+                            color='#2196F3' 
+                        />
+                    </button>
                 </div>
             </div>
             {toggle && (

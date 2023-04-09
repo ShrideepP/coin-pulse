@@ -20,4 +20,4 @@ export interface DataRowProps {
     percent_change_7d: number | null;
     market_cap: number | null;
     volume_24h: number | null;
-}
+};
