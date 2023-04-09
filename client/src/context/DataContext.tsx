@@ -66,7 +66,7 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
 
     // sorting logic
 
-    const handleSorting = (event: React.MouseEvent<HTMLLIElement>) => {
+    const handleSorting = (event: React.MouseEvent<HTMLButtonElement>) => {
         const value = event.currentTarget.textContent;
         if(value) {
             setSorting(value);

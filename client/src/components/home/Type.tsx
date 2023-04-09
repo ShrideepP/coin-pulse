@@ -5,6 +5,6 @@ export interface MarketCardProps {
 
 export interface SelectBoxProps {
     selected: string | undefined;
-    handleSelect: ((event: React.MouseEvent<HTMLLIElement>) => void) | undefined;
+    handleSelect: ((event: React.MouseEvent<HTMLButtonElement>) => void) | undefined;
     options: string[];
 };

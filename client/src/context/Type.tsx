@@ -9,7 +9,7 @@ export interface ThemeContextValue {
 
 export interface DataContextValue {
     sorting: string;
-    handleSorting: (event: React.MouseEvent<HTMLLIElement>) => void;
+    handleSorting: (event: React.MouseEvent<HTMLButtonElement>) => void;
     search: string;
     setSearch: React.Dispatch<React.SetStateAction<string>>;
     searchResults: { id: string, name: string }[] | [];

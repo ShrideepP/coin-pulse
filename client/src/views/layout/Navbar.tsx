@@ -14,7 +14,7 @@ const Navbar = () => {
                 Coin Pulse
             </h1>
             <div className="flex items-center gap-x-4 md:gap-x-6 lg:gap-x-8">
-                <button type="button" onClick={Theme?.toggleMode} className="text-2xl text-dominant dark:text-dark-dominant">
+                <button type="button" onClick={Theme?.toggleMode} className="text-xl text-dominant dark:text-dark-dominant">
                     { modeElement }
                 </button>
                 <a href="" target="_blank">
