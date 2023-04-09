@@ -14,9 +14,8 @@
         display: none;
     }
 
-    input[type=search] {
+    input {
         -webkit-appearance: none;
-        -webkit-appearance: textfield;
     }
     
     .spaceX {
