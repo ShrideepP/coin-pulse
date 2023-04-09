@@ -26,8 +26,8 @@ const Filters = () => {
                 />
             </div>
             <div className='w-full md:w-[unset] h-full relative flex items-center'>
-                <div className="w-full h-10 flex items-center bg-primary dark:bg-dark-primary rounded-sm">
-                    <input type="search" onChange={Data?.handleSearchChange} placeholder="Search" className="w-full h-full px-4 text-xs text-dominant dark:text-dark-dominant placeholder:text-compliment dark:placeholder:text-dark-compliment font-semibold tracking-wide border border-secondary dark:border-dark-secondary bg-transparent outline-none" />
+                <div className="w-full h-10 flex items-center bg-primary dark:bg-dark-primary border border-secondary dark:border-dark-secondary rounded-sm">
+                    <input type="search" onChange={Data?.handleSearchChange} placeholder="Search" className="w-full h-full px-4 text-xs text-dominant dark:text-dark-dominant placeholder:text-compliment dark:placeholder:text-dark-compliment font-semibold tracking-wide bg-transparent outline-none" />
                     <button className="w-fit h-full px-4 text-xl text-white bg-accent hover:bg-accent-dark focus:bg-accent-dark">
                         <BiSearch />
                     </button>
