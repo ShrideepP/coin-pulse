@@ -7,20 +7,6 @@ export interface ThemeContextValue {
     toggleMode: () => void;
 };
 
-export interface DataContextValue {
-    sorting: string;
-    handleSorting: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    search: string;
-    setSearch: React.Dispatch<React.SetStateAction<string>>;
-    searchResults: { id: string, name: string }[] | [];
-    handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    currentPage: number;
-    pageNums: number[];
-    nextPage: () => void;
-    prevPage: () => void;
-    handlePageNumClick: (pageNum: number) => void;
-};
-
 export interface Data {
     id: number;
     name: string;
@@ -36,4 +22,20 @@ export interface Data {
             volume_24h: number | null;
         };
     };
+};
+
+export interface DataContextValue {
+    data: Data[] | [];
+    loading: boolean;
+    sorting: string;
+    handleSorting: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    search: string;
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+    searchResults: { id: string, name: string }[] | [];
+    handleSearchChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    currentPage: number;
+    pageNums: number[];
+    nextPage: () => void;
+    prevPage: () => void;
+    handlePageNumClick: (pageNum: number) => void;
 };

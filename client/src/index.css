@@ -26,4 +26,12 @@
         @apply py-6 md:py-8
     }
 
+    .data__header {
+        @apply text-xs text-dominant dark:text-dark-dominant font-medium
+    }
+
+    .data__row {
+        @apply text-xs text-dominant dark:text-dark-dominant font-medium
+    }
+
 }

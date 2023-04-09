@@ -17,7 +17,7 @@ const Navbar = () => {
                 <button type="button" onClick={Theme?.toggleMode} className="text-xl text-dominant dark:text-dark-dominant">
                     { modeElement }
                 </button>
-                <a href="" target="_blank">
+                <a href="https://github.com/ShrideepP/coin-pulse" target="_blank">
                     <button className="px-6 py-3 text-xs text-white font-bold tracking-wider uppercase bg-accent-dark hover:bg-accent rounded-sm">
                         GitHub Repo
                     </button>

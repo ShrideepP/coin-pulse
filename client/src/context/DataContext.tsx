@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
-import { ContextProviderProps, DataContextValue } from './Type';
+import { ContextProviderProps, Data, DataContextValue } from './Type';
 import axios from 'axios';
 import { BACKEND_URL, RESULTS_PER_PAGE, SORTING_OPTIONS } from '../constants';
 
@@ -9,7 +9,7 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
 
     // data state
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<Data[] | []>([]);
 
     const [loading, setLoading] = useState(false);
 
@@ -105,6 +105,8 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
     
     return (
         <DataContext.Provider value={{
+            data,
+            loading,
             sorting,
             handleSorting,
             search,

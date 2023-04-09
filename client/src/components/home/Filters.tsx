@@ -22,7 +22,7 @@ const Filters = () => {
                     />
                 </div>
             </div>
-            <div className='w-fit h-full relative flex items-center'>
+            <div className='w-full md:w-fit h-full relative flex items-center'>
                 <SearchBar />
             </div>
         </section>
