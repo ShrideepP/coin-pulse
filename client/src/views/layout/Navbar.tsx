@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { TbMoon, TbSun } from 'react-icons/tb';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     
@@ -10,9 +11,13 @@ const Navbar = () => {
     
     return (
         <nav className="w-full spaceX space-Y min-h-[10vh] flex items-center justify-between space-y-2">
-            <h1 className="text-xl text-dominant dark:text-dark-dominant font-extrabold uppercase">
-                Coin Pulse
-            </h1>
+            <button>
+                <Link to='/'>
+                    <h1 className="text-xl text-dominant dark:text-dark-dominant font-extrabold uppercase">
+                        Coin Pulse
+                    </h1>
+                </Link>
+            </button>
             <div className="flex items-center gap-x-4 md:gap-x-6 lg:gap-x-8">
                 <button type="button" onClick={Theme?.toggleMode} className="text-xl text-dominant dark:text-dark-dominant">
                     { modeElement }

@@ -7,15 +7,28 @@
 @layer base {
 
     *, *::before, *::after {
-        transition: color 250ms, background-color 250ms;
+        transition: color 250ms, background-color 250ms, max-height 250ms;
     }
 
     ::-webkit-search-cancel-button {
         display: none;
     }
 
-    input {
-        -webkit-appearance: none;
+    .my-masonry-grid {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin-left: -30px;
+        width: auto;
+    }
+    
+    .my-masonry-grid_column {
+        padding-left: 30px;
+        background-clip: padding-box;
+    }
+    
+    .my-masonry-grid_column > div {
+        margin-bottom: 30px;
     }
     
     .spaceX {
@@ -24,6 +37,14 @@
 
     .spaceY {
         @apply py-6 md:py-8
+    }
+
+    .sectionX {
+        @apply px-2 md:px-5 lg:px-8
+    }
+
+    .sectionY {
+        @apply py-3 md:py-4 lg:py-5
     }
 
     .data__header {
