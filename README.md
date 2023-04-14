@@ -43,7 +43,7 @@ Coin Pulse is a cryptocurrency tracking application that allows users to fetch a
 4. Create a `.env` file in the `server` directory and set your API key for Coin Market Cap API as `API_KEY=<your-api-key>`
 5. Start the development server for front-end: `cd client && npm run dev`
 6. Start the development server for back-end: `cd server && npm run dev`
-7. Access the application in your web browser at `http://localhost:3000`
+7. Access the application in your web browser at `http://localhost:5173`
 
 ## API Usage
 
@@ -55,6 +55,6 @@ Contributions to Coin Pulse are welcome! If you would like to contribute, please
 
 ## Contact
 
-For any inquiries or questions, please contact me at [shrideeppakhare2005@gmail.com].
+For any inquiries or questions, please contact me at shrideeppakhare2005@gmail.com.
 
 Happy coding!
