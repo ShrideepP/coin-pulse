@@ -58,6 +58,7 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
             setLoading(true);
         } catch (error) {
             console.error(error);
+            setLoading(true);
         };
 
     };

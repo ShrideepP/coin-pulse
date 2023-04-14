@@ -18,11 +18,16 @@ const DetailsPage = () => {
     const [loading, setLoading] = useState(false);
 
     const fetchCoinDetails = async () => {
-        const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details?id=${coinId}`);
-        if(coinId) {
-            const JSON = response.data.data[coinId];
-            setCryptoDetails(JSON);
+        try {
+            const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details?id=${coinId}`);
+            if(coinId) {
+                const JSON = response.data.data[coinId];
+                setCryptoDetails(JSON);
+                setLoading(true);
+            };
+        } catch (error) {
             setLoading(true);
+            console.log(error);
         };
     };
 
