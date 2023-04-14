@@ -39,12 +39,8 @@
         @apply py-6 md:py-8
     }
 
-    .sectionX {
-        @apply px-2 md:px-5 lg:px-8
-    }
-
-    .sectionY {
-        @apply py-3 md:py-4 lg:py-5
+    .innerSpace {
+        @apply px-4 py-4 md:px-4 lg:px-6
     }
 
     .data__header {

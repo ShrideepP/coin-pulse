@@ -1,11 +1,17 @@
 import { HeaderProps } from "./Type";
-import { GoChevronRight } from 'react-icons/go';
+import { Link } from "react-router-dom";
+import { GoChevronRight, GoChevronLeft } from 'react-icons/go';
 
 const Header = ({ name, symbol, cmc_rank }: HeaderProps) => {
     return (
         <div className="w-full h-fit spaceY flex justify-between items-center border-b border-secondary dark:border-dark-secondary">
             <div className="flex items-center gap-x-4">
-                <button className="h-10 px-6 flex items-center border border-secondary dark:border-dark-secondary bg-primary dark:bg-dark-primary rounded-sm">
+                <Link to='/'>
+                    <button className="w-9 h-9 grid place-items-center bg-accent hover:bg-accent-dark rounded-sm">
+                        <GoChevronLeft className="text-sm text-white" />
+                    </button>
+                </Link>
+                <button className="h-9 px-6 flex items-center border border-secondary dark:border-dark-secondary bg-primary dark:bg-dark-primary rounded-sm">
                     <span className="text-xs text-dominant dark:text-dark-dominant font-semibold">
                         Rank { '#' + cmc_rank }
                     </span>
@@ -14,7 +20,7 @@ const Header = ({ name, symbol, cmc_rank }: HeaderProps) => {
                     { symbol }
                 </span>
             </div>
-            <div className="flex items-center gap-x-2 text-xs text-dominant dark:text-dark-dominant font-semibold tracking-wide uppercase">
+            <div className="hidden md:flex items-center gap-x-2 text-xs text-dominant dark:text-dark-dominant font-semibold tracking-wide uppercase">
                 <span>Coins</span>
                 <GoChevronRight className="text-accent text-lg" />
                 <span>{ name }</span>

@@ -13,9 +13,11 @@ const DetailsPage = () => {
 
     const [cryptoDetails, setCryptoDetails] = useState<CryptoCoinDetails | null>(null);
 
+    const [coinDesc, setCoinDesc] = useState<string | null>('');
+
     const [loading, setLoading] = useState(false);
 
-    const fetchData = async () => {
+    const fetchCoinDetails = async () => {
         const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details?id=${coinId}`);
         if(coinId) {
             const JSON = response.data.data[coinId];
@@ -24,15 +26,24 @@ const DetailsPage = () => {
         };
     };
 
+    const fetchCoinDesc = async () => {
+        const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details/description?id=${coinId}`);
+        if(coinId) {
+            const JSON = response.data.data[coinId];
+            setCoinDesc(JSON.description);
+        };
+    };
+
     useEffect(() => {
-        fetchData();
+        fetchCoinDetails();
+        fetchCoinDesc();
     }, []);
 
     return (
         <div className='w-full h-fit spaceX'>
             {(loading && cryptoDetails) ? (
                 <Suspense fallback={<Loading />}>
-                    <Data data={cryptoDetails} />
+                    <Data data={cryptoDetails} desc={coinDesc} />
                 </Suspense>
             ) : (
                 <Loading />
