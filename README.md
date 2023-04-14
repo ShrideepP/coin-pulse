@@ -41,8 +41,8 @@ Coin Pulse is a cryptocurrency tracking application that allows users to fetch a
 2. Install dependencies for front-end: `cd client && npm install`
 3. Install dependencies for back-end: `cd server && npm install`
 4. Create a `.env` file in the `server` directory and set your API key for Coin Market Cap API as `API_KEY=<your-api-key>`
-5. Start the development server for front-end: `cd client && npm start`
-6. Start the development server for back-end: `cd server && npm start`
+5. Start the development server for front-end: `cd client && npm run dev`
+6. Start the development server for back-end: `cd server && npm run dev`
 7. Access the application in your web browser at `http://localhost:3000`
 
 ## API Usage
