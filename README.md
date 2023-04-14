@@ -55,6 +55,6 @@ Contributions to Coin Pulse are welcome! If you would like to contribute, please
 
 ## Contact
 
-For any inquiries or questions, please contact me at [your-email-address].
+For any inquiries or questions, please contact me at [shrideeppakhare2005@gmail.com].
 
 Happy coding!
