@@ -13,7 +13,7 @@ const Data = () => {
         <>
             <Filters />
             <DataHeader />
-            {Context?.data.map(coin => (
+            {Context?.data && Context?.data.map(coin => (
                 <DataRow
                     key={coin.id}
                     id={coin.id}
