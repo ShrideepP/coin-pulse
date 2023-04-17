@@ -3,6 +3,7 @@ import { DataContext } from '../../context/DataContext';
 import Filters from "./Filters";
 import DataHeader from "./DataHeader";
 import DataRow from "./DataRow";
+import Pagination from './Pagination';
 
 const Data = () => {
 
@@ -27,6 +28,7 @@ const Data = () => {
                     volume_24h={coin.quote.USD.volume_24h} 
                 />
             ))}
+            <Pagination />
         </>
     );
 

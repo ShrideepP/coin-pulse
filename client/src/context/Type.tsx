@@ -25,7 +25,7 @@ export interface Data {
 };
 
 export interface DataContextValue {
-    data: Data[] | [];
+    data: Data[] | null;
     loading: boolean;
     sorting: string;
     toggleSorting: boolean;

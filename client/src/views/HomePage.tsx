@@ -3,7 +3,6 @@ import MarketInfo from "../components/home/MarketInfo";
 import Loading from "../components/other/Loading";
 import Data from "../components/home/Data";
 import Sorting from '../components/home/Sorting';
-import Pagination from "../components/home/Pagination";
 import { DataContext } from '../context/DataContext';
 
 const HomePage = () => {
@@ -20,8 +19,7 @@ const HomePage = () => {
             ) : (
                 <Loading />
             )}
-            <Sorting />
-            <Pagination />
+            {Context?.data && <Sorting />}
         </div>
     );
 

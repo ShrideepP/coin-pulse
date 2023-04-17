@@ -9,7 +9,7 @@ export const DataProvider = ({ children }: ContextProviderProps) => {
 
     // data state
 
-    const [data, setData] = useState<Data[] | []>([]);
+    const [data, setData] = useState<Data[] | null>(null);
 
     const [loading, setLoading] = useState(false);
 
