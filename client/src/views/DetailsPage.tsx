@@ -4,6 +4,7 @@ import { CryptoCoinDetails } from './Type';
 import Loading from '../components/other/Loading';
 import Data from '../components/details/Data';
 import axios from 'axios';
+import { BACKEND_URL } from '../constants';
 
 const DetailsPage = () => {
 
@@ -19,7 +20,7 @@ const DetailsPage = () => {
 
     const fetchCoinDetails = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details?id=${coinId}`);
+            const response = await axios.get(`${BACKEND_URL}/api/cryptocurrency/details?id=${coinId}`);
             if(coinId) {
                 const JSON = response.data.data[coinId];
                 setCryptoDetails(JSON);
@@ -33,7 +34,7 @@ const DetailsPage = () => {
 
     const fetchCoinDesc = async () => {
         try {
-            const response = await axios.get(`http://localhost:3001/api/cryptocurrency/coin/description?id=${coinId}`);
+            const response = await axios.get(`${BACKEND_URL}/api/cryptocurrency/coin/description?id=${coinId}`);
             if(coinId) {
                 const JSON = response.data.data[coinId];
                 setCoinDesc(JSON.description);
