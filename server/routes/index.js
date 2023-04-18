@@ -9,6 +9,6 @@ router.get('/cryptocurrencies', getCoinsList);
 
 router.get('/cryptocurrency/details', getCoinDetails);
 
-router.get('/cryptocurrency/details/description', getCoinDescription);
+router.get('/cryptocurrency/coin/description', getCoinDescription);
 
 export default router;

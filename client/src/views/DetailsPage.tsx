@@ -32,10 +32,16 @@ const DetailsPage = () => {
     };
 
     const fetchCoinDesc = async () => {
-        const response = await axios.get(`http://localhost:3001/api/cryptocurrency/details/description?id=${coinId}`);
-        if(coinId) {
-            const JSON = response.data.data[coinId];
-            setCoinDesc(JSON.description);
+        try {
+            const response = await axios.get(`http://localhost:3001/api/cryptocurrency/coin/description?id=${coinId}`);
+            if(coinId) {
+                const JSON = response.data.data[coinId];
+                setCoinDesc(JSON.description);
+                setLoading(true);
+            } 
+        } catch (error) {
+            setLoading(true);
+            console.log(error);
         };
     };
 
@@ -46,7 +52,7 @@ const DetailsPage = () => {
 
     return (
         <div className='w-full h-fit spaceX'>
-            {(loading && cryptoDetails) ? (
+            {(loading && cryptoDetails && coinDesc) ? (
                 <Suspense fallback={<Loading />}>
                     <Data data={cryptoDetails} desc={coinDesc} />
                 </Suspense>
