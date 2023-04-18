@@ -18,15 +18,10 @@ const Navbar = () => {
                     </h1>
                 </Link>
             </button>
-            <div className="flex items-center gap-x-4 md:gap-x-6 lg:gap-x-8">
+            <div>
                 <button type="button" onClick={Theme?.toggleMode} className="text-xl text-dominant dark:text-dark-dominant">
                     { modeElement }
                 </button>
-                <a href="https://github.com/ShrideepP/coin-pulse" target="_blank">
-                    <button className="px-6 py-3 text-xs text-white font-bold tracking-wider uppercase bg-accent-dark hover:bg-accent rounded-sm">
-                        GitHub Repo
-                    </button>
-                </a>
             </div>
         </nav>
     );
